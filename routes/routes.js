@@ -1,5 +1,5 @@
+const ValuesCrtl = require('../controllers/values_controller');
+
 module.exports = function (app) {
-    app.get('/test', (req, res) => {
-        res.send('Success');
-    });
+    app.get('/test', ValuesCrtl.getTest);
 };
