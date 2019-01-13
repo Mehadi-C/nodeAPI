@@ -1,14 +1,14 @@
 module.exports = {
-    createTest() {
+    createTest(req, res) {
 
     },
     readTest(req, res) {
         res.send('Success');
     },
     updateTest(req, res) {
-
+        
     },
-    deleteTest() {
+    deleteTest(req, res) {
 
     }
 }
