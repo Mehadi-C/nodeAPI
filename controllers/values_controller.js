@@ -1,14 +1,16 @@
 module.exports = {
-    createTest(req, res) {
-
+    createValues(req, res) {
+        if (!req.body.value) {
+            res.status(400).send();
+        }
     },
-    readTest(req, res) {
+    readValues(req, res) {
         res.send('Success');
     },
-    updateTest(req, res) {
+    updateValues(req, res) {
         
     },
-    deleteTest(req, res) {
+    deleteValues(req, res) {
 
     }
 }
