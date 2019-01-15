@@ -1,8 +1,7 @@
 module.exports = {
     createValues(req, res) {
-        if (!req.body.value) {
-            res.status(400).send();
-        }
+        console.log(req.body);
+        res.send('Hello');
     },
     readValues(req, res) {
         res.send('Success');
