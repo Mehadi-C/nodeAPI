@@ -9,7 +9,7 @@ const port = 8000;
 mongoose.connect('mongodb://dbuser:developer1@ds044989.mlab.com:44989/t6-test', { useNewUrlParser: true });
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 require('./routes/routes')(app);
 
