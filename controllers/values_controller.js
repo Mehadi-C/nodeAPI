@@ -12,7 +12,10 @@ module.exports = {
         res.status(200).send();
     },
     readValues(req, res) {
-        res.send('Success');
+        var Value = mongoose.model('Value', ValueSchema);
+
+        Value.find({})
+            .then(values => res.send(values));
     },
     updateValues(req, res) {
         
