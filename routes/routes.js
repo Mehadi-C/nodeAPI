@@ -4,6 +4,6 @@ module.exports = function (app) {
     app
      .get('/test', ValuesCrtl.readValues)
      .post('/test', ValuesCrtl.createValues)
-     .put('/test/:id', ValuesCrtl.updateValues)
+     .put('/test', ValuesCrtl.updateValues)
      .delete('/test/:id', ValuesCrtl.deleteValues)
 };
