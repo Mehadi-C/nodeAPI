@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const ValueSchema = require('../models/value');
 
 module.exports = {
-    createValues(req, res) {
+    createValue(req, res) {
         var Value = mongoose.model('Value', ValueSchema);
 
         Value.create({ id: req.body.id, title: req.body.title }, function (err) {
@@ -17,7 +17,7 @@ module.exports = {
         Value.find({})
             .then(values => res.send(values));
     },
-    updateValues(req, res) {
+    updateValue(req, res) {
         var Value = mongoose.model('Value', ValueSchema);
         
         Value.findOneAndUpdate({ id: req.body.id }, { title: req.body.title })
@@ -26,7 +26,7 @@ module.exports = {
           }))
           .then(updatedDocument => res.send(updatedDocument));
     },
-    deleteValues(req, res) {
+    deleteValue(req, res) {
 
     }
 }
