@@ -6,4 +6,4 @@ const ValueSchema = new Schema({
     title: String
 });
 
-module.exports = ValueSchema;
+module.exports = mongoose.model('Value', ValueSchema);
