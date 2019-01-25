@@ -3,10 +3,16 @@ const ValueModel = require('../models/value');
 module.exports = {
     createValue(req, res) {
         ValueModel.create({ id: req.body.id, title: req.body.title }, function (err) {
-            if (err) return handleError(err);
+            if (err) return res.status(400).json(err);
+          }, function () {
+              res.sendStatus(200);
           });
+    },
 
-        res.status(201).send();
+    createValues(req, res) {
+        ValueModel.insertMany(req.body, function(err) {
+            if (err) return res.status(400).json(err);
+        });
     },
 
     readValues(req, res) {
