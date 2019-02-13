@@ -4,7 +4,8 @@ module.exports = {
     createValue(req, res) {
         ValueModel.create({
             id: req.body.id,
-            title: req.body.title
+            title: req.body.title,
+            description: req.body.description
         }, function (err) {
             if (err) return res.status(400).json(err);
         }, function () {
@@ -26,7 +27,8 @@ module.exports = {
         ValueModel.findOneAndUpdate({
                 id: req.body.id
             }, {
-                title: req.body.title
+                title: req.body.title,
+                description: req.body.description
             })
             .then(() => Value.findOne({
                 id: req.body.id
