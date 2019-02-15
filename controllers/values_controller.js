@@ -18,6 +18,11 @@ module.exports = {
             .then(values => res.send(values));
     },
 
+    readValue(req, res) {
+        ValueModel.find({ id: req.params.id })
+            .then(values => res.send(values))
+    },
+
     readValues(req, res) {
         ValueModel.find({})
             .then(values => res.send(values));
